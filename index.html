@@ -12,14 +12,16 @@
     </div>
     <main class="main container">
         <button class="btn" id="addBookBtn">+ Add Book </button>
-        <div class="books"></div>
+        <div class="books">
+            
+        </div>
     </main>
     <div class="footer"></div>
     <div class="modal" id="addBookModal">
-        <form class="add-book-form">
+        <form class="add-book-form" id="addBookForm">
             <h3>Add new book</h3>
-            <input class="input" type="text" id="title" placeholder="Title" required maxlength="100" minlength="5">
-            <input class="input" type="text" id="author" placeholder="Author" required maxlength="100" minlength="5">
+            <input class="input" type="text" id="title" placeholder="Title" required maxlength="100">
+            <input class="input" type="text" id="author" placeholder="Author" required maxlength="100">
             <input class="input" type="number" id="pages" placeholder="Pages" required maxlength="10000">
             <div class="is-read">
                 <label for="is-read"> Have you read it?</label>
