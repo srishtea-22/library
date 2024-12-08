@@ -72,4 +72,19 @@ function createBookCard(book){
 
     const bookGrid = document.getElementById('bookGrid');
     bookGrid.appendChild(bookCard);
+
+    readBtn.onclick = () => toggleRead(book);
+
+    function toggleRead(book) {
+        book.isRead = !book.isRead; 
+        if (book.isRead) {
+            readBtn.textContent = "Read";
+            readBtn.classList.remove('btn-red');
+            readBtn.classList.add('btn-green');
+        } else {
+            readBtn.textContent = "Not read";
+            readBtn.classList.remove('btn-green');
+            readBtn.classList.add('btn-red');
+        }
+    }
 }
