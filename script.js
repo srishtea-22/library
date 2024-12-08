@@ -74,7 +74,7 @@ function createBookCard(book){
     bookGrid.appendChild(bookCard);
 
     readBtn.onclick = () => toggleRead(book);
-
+    removeBtn.onclick = removeBook;
     function toggleRead(book) {
         book.isRead = !book.isRead; 
         if (book.isRead) {
@@ -88,3 +88,29 @@ function createBookCard(book){
         }
     }
 }
+
+const toggleRead = (book) => {
+    book.isRead = !book.isRead; 
+    if (book.isRead) {
+        readBtn.textContent = "Read";
+        readBtn.classList.remove('btn-red');
+        readBtn.classList.add('btn-green');
+    } else {
+        readBtn.textContent = "Not read";
+        readBtn.classList.remove('btn-green');
+        readBtn.classList.add('btn-red');
+    }
+}
+
+const removeBook = (e) => {
+    const bookCard = e.target.parentNode.parentNode;
+
+    const title = bookCard.querySelector("p").textContent.replaceAll('"', '');
+
+    bookCard.remove();
+
+    const bookIndex = library.findIndex(book => book.name === title);
+    if (bookIndex !== -1) {
+        library.splice(bookIndex, 1); 
+    }
+};
