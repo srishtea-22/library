@@ -1,1 +1,1 @@
-a javascript project
+a javascript project to store books
